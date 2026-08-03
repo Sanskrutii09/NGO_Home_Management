@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initiatives Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<h2>Initiatives Management</h2>
+
+<form action="/add_initiative" method="POST">
+
+<div class="mb-3">
+<label>Initiative Title</label>
+<input type="text" class="form-control" name="title" required>
+</div>
+
+<div class="mb-3">
+<label>Description</label>
+<textarea class="form-control" rows="4" name="description"></textarea>
+</div>
+
+<div class="mb-3">
+<label>Status</label>
+
+<select class="form-control" name="status">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+
+</div>
+
+<button class="btn btn-success">
+Add Initiative
+</button>
+
+<a href="/dashboard" class="btn btn-secondary">
+Back
+</a>
+
+</form>
+
+<hr>
+
+<table class="table table-bordered">
+
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Description</th>
+<th>Status</th>
+</tr>
+
+{% for i in initiatives %}
+
+<tr>
+
+<td>{{ i.id }}</td>
+<td>{{ i.title }}</td>
+<td>{{ i.description }}</td>
+<td>{{ i.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
