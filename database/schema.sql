@@ -34,3 +34,32 @@ CREATE TABLE IF NOT EXISTS initiatives (
     image TEXT,
     status TEXT
 );
+
+-- Our Story Table
+CREATE TABLE IF NOT EXISTS our_story (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT NOT NULL
+);
+
+
+
+-- Programs Table
+CREATE TABLE IF NOT EXISTS programs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT
+);
+
+-- Team Members Table
+CREATE TABLE IF NOT EXISTS team_members (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    designation TEXT,
+    image TEXT
+);
+
+CREATE TABLE IF NOT EXISTS core_values (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL
+);

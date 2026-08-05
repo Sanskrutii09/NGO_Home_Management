@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Core Values</title>
+</head>
+
+<body>
+
+<h2>Add Core Value</h2>
+
+<form method="POST">
+
+<input type="text" 
+name="title" 
+placeholder="Value Name"
+required>
+
+<br><br>
+
+<textarea name="description"
+placeholder="Description"
+required></textarea>
+
+<br><br>
+
+<button type="submit">
+Save
+</button>
+
+</form>
+
+
+<h2>Existing Values</h2>
+
+{% for value in values %}
+
+<h3>{{ value['title'] }}</h3>
+
+<p>
+{{ value['description'] }}
+</p>
+
+<a href="/edit-core-value/{{ value['id'] }}">
+    Edit
+</a>
+
+<a href="/delete-core-value/{{ value['id'] }}"
+   onclick="return confirm('Delete this value?')">
+    Delete
+</a>
+
+<hr>
+
+{% endfor %}
+
+
+</body>
+</html>

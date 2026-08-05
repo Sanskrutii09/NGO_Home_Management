@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:40px;
+            background:#f8f9fa;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:8px;
+            box-shadow:0 2px 5px rgba(0,0,0,.1);
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        h2{
+            color:#0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>About Us</h1>
+
+<div class="card">
+
+<h2>Our Story</h2>
+
+{% if story %}
+<p>{{ story['content'] }}</p>
+{% else %}
+<p>No story added.</p>
+{% endif %}
+
+</div>
+
+
+<div class="card">
+
+<h2>Core Values</h2>
+
+{% for value in values %}
+
+<h3>{{ value['title'] }}</h3>
+
+<p>{{ value['description'] }}</p>
+
+{% endfor %}
+
+</div>
+
+
+<div class="card">
+
+<h2>Programs</h2>
+
+{% for program in programs %}
+
+<h3>{{ program['name'] }}</h3>
+
+<p>{{ program['description'] }}</p>
+
+{% endfor %}
+
+</div>
+
+
+<div class="card">
+
+<h2>Team Members</h2>
+
+{% for member in members %}
+
+<h3>{{ member['name'] }}</h3>
+
+<p>{{ member['designation'] }}</p>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

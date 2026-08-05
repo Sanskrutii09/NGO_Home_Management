@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programs</title>
+</head>
+<body>
+
+<h2>Add Program</h2>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Program Name"
+        required>
+
+    <br><br>
+
+    <textarea
+        name="description"
+        placeholder="Description"
+        required></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Existing Programs</h2>
+
+{% for program in programs %}
+
+<h3>{{ program['name'] }}</h3>
+
+<p>{{ program['description'] }}</p>
+
+<a href="/edit-program/{{ program['id'] }}">
+    Edit
+</a>
+
+<a href="/delete-program/{{ program['id'] }}"
+   onclick="return confirm('Delete this program?')">
+    Delete
+</a>
+
+<hr>
+
+{% endfor %}
+
+</body>
+</html>

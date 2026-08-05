@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Members</title>
+</head>
+<body>
+
+<h2>Add Team Member</h2>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Member Name"
+        required>
+
+    <br><br>
+
+    <input
+        type="text"
+        name="designation"
+        placeholder="Designation"
+        required>
+
+    <br><br>
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Existing Team Members</h2>
+
+{% for member in members %}
+
+<h3>{{ member['name'] }}</h3>
+
+<p>{{ member['designation'] }}</p>
+
+<a href="/edit-team-member/{{ member['id'] }}">
+    Edit
+</a>
+
+<a href="/delete-team-member/{{ member['id'] }}"
+   onclick="return confirm('Delete this member?')">
+    Delete
+</a>
+
+<hr>
+
+{% endfor %}
+
+</body>
+</html>

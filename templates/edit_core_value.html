@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Edit Core Value</title>
+</head>
+
+<body>
+
+<h2>Edit Core Value</h2>
+
+<form method="POST">
+
+<input 
+type="text" 
+name="title"
+value="{{ value['title'] }}"
+required>
+
+<br><br>
+
+<textarea name="description" required>
+{{ value['description'] }}
+</textarea>
+
+<br><br>
+
+<button type="submit">
+Update
+</button>
+
+</form>
+
+</body>
+
+</html>
